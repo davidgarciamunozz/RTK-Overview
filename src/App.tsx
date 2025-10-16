@@ -22,9 +22,7 @@ function App() {
     <h3>Books fetching from API:</h3>
     {
       books.map((book) => (
-        <li key={book.key}>
-          <BookCard book={book}/>
-        </li>
+          <BookCard key={book.key} book={book}/>
       ))
     }
     </>
