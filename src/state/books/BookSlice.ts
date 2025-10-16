@@ -24,10 +24,13 @@ const bookSlice = createSlice({
             if (index !== -1) {
                 state.books[index] = action.payload
             }
+        },
+        addBook:(state,action:PayloadAction<Book>) => {
+            state.books.push(action.payload)
         }
 
     }
 })
 
-export const {setBooks, deleteBook, editBook} = bookSlice.actions
+export const {setBooks, deleteBook, editBook, addBook} = bookSlice.actions
 export default bookSlice.reducer
