@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from './counter/CounterSlice'
+import bookReducer from './books/BookSlice'
 
-export const store = configureStore ({
+export const store = configureStore({
     reducer: {
-        counter: counterReducer
+        books: bookReducer
     }
 })
 
-//export 2 types (RootState / AppDispatch )
+
 
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = ReturnType<typeof store.dispatch>

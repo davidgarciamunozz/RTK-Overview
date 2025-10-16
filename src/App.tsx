@@ -1,12 +1,18 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Counter from './components/Counter'
+import BookList from './views/BookList'
+import BookForm from './views/BookForm'
+import EditBookForm from './views/EditBookForm'
+import Init from './components/Counter'
 
 function App() {
   return (
-    <>
-    <h3>Redux Complete Tutorial</h3>
-    <Counter/>
-    </>
+    <Routes>
+      <Route path='/' element={<Init/>}/>
+      <Route path='/books' element={<BookList/>}/>
+      <Route path='/add' element={<BookForm/>}/>
+      <Route path='/edit/:id' element={<EditBookForm/>}/>
+    </Routes>
   )
 }
 
