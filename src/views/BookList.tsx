@@ -16,6 +16,7 @@ const dispatch = useDispatch()
             getAllBooks().then((data) => {
                 if (data) {
                     dispatch(setBooks(data))
+                    console.log(data)
                 }
             })
         }

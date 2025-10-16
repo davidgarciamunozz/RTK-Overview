@@ -15,9 +15,19 @@ const bookSlice = createSlice({
     reducers: {
         setBooks: (state, action:PayloadAction<Book[]>) => {
             state.books = action.payload
+        },
+        deleteBook: (state, action: PayloadAction<string>) => {
+            state.books = state.books.filter((book => book.key !== action.payload))
+        },
+        editBook: (state, action:PayloadAction<Book>) => {
+            const index = state.books.findIndex(book => book.key === action.payload.key)
+            if (index !== -1) {
+                state.books[index] = action.payload
+            }
         }
+
     }
 })
 
-export const {setBooks} = bookSlice.actions
+export const {setBooks, deleteBook, editBook} = bookSlice.actions
 export default bookSlice.reducer
